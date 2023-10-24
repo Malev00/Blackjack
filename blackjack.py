@@ -1,3 +1,4 @@
+# Modules 
 import random 
 import os 
 import time
@@ -21,7 +22,7 @@ def clear():
 
 # Function to print the cards
 def print_cards(cards, hidden):
-    
+
     s = ""
     for card in cards:
         s = s + "\t ________________"
@@ -157,14 +158,14 @@ def blackjack_game(deck):
         if len(player_cards) == 2:
             if player_cards[0].card_value == 11 and player_cards[1].card_value == 11:
                 player_cards[0].card_value = 1 
-                player_score -= 1
+                player_score -= 10
         
         # Print player cards and score
         print("PLAYER CARDS: ")
         print_cards(player_cards, False)
         print("PLAYER SCORE = ", player_score)
 
-        input()
+        input() # This func pauses the program until the user presser "Enter"
 
         # Randomly dealing a card
         dealer_card = random.choice(deck)
