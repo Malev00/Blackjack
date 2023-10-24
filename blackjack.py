@@ -4,7 +4,7 @@ import time
 
 # The Card class definition 
 class Card:
-    def __init--(self, suit, value, card_value):
+    def __init__(self, suit, value, card_value):
 
         # Suit of the Card like Spades and Clubs
         self.suit = suit
@@ -177,7 +177,7 @@ def blackjack_game(deck):
         print("DEALER CARDS: ")
         if len(dealer_cards) == 1:
             print_cards(dealer_cards, False)
-            print("DEALER SCORE = "m dealer_score)
+            print("DEALER SCORE = ", dealer_score)
         else:
             print_cards(dealer_cards[:-1], True)
             print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
@@ -335,13 +335,17 @@ def blackjack_game(deck):
 
     # TIE Game
     if dealer_score == player_score:
+        print("TIE GAME!!!")
+
+    # Player wins 
+    elif player_score > dealer_score:
         print("PLAYER WINS!!!")
     
     # Dealer Wins
     else: 
         print("DEALER WINS!!!")
 
-if __name__ = '__main__':
+if __name__ == '__main__':
 
     # The type of suit
     suits = ["Spades", "Hears," "Clubs", "Diamonds"]
@@ -352,5 +356,5 @@ if __name__ = '__main__':
     # The type of card
     cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
-
+    # The card value
     
