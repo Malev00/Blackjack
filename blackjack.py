@@ -16,25 +16,27 @@ class Card:
         self.card_value = card_value
 
 # Clear the terminal
-def Clear():
+def clear():
     os.system('clear')
 
 # Function to print the cards
 def print_cards(cards, hidden):
+    
     s = ""
     for card in cards:
-        s = s + "\t _____________"
+        s = s + "\t ________________"
     if hidden:
-        s += "\t _____________"
+        s += "\t ________________"
     print(s)
-
+ 
+ 
     s = ""
     for card in cards:
-        s = s + "\t|               |"
+        s = s + "\t|                |"
     if hidden:
-        s += "\t|               |"
+        s += "\t|                |"    
     print(s)
-
+ 
     s = ""
     for card in cards:
         if card.value == '10':
@@ -127,7 +129,6 @@ def print_cards(cards, hidden):
  
     print()
  
- 
 # Function for a single game of blackjack
 def blackjack_game(deck):
  
@@ -192,7 +193,7 @@ def blackjack_game(deck):
         input()
 
     # Player gets a blackjack
-    if player_scre == 21:
+    if player_score == 21:
         print("PLAYER HAS A BLACKJACK!!!!")
         print("PLAYER WINS!!!!")
         quit()
@@ -245,7 +246,7 @@ def blackjack_game(deck):
             # Print player and dealer cards
             print("DEALER CARDS: ")
             print_cards(dealer_cards[: -1], True)
-            print("DEALER SCORE = ", dealer_score - dealer_cards[-1].car_value)
+            print("DEALER SCORE = ", dealer_score - dealer_cards[-1].card_value)
 
             print()
 
@@ -348,10 +349,10 @@ def blackjack_game(deck):
 if __name__ == '__main__':
 
     # The type of suit
-    suits = ["Spades", "Hears," "Clubs", "Diamonds"]
+    suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
 
     # The suit value
-    suits_value = {"Spades": "\u2664", "Hearts": "\u2661", "Clubs": "\u2667", "Diamonds": "\u2662"}
+    suits_values = {"Spades": "\u2664", "Hearts": "\u2661", "Clubs": "\u2667", "Diamonds": "\u2662"}
 
     # The type of card
     cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
@@ -369,10 +370,10 @@ if __name__ == '__main__':
         for card in cards:
 
             # Adding card to the deck
-            deck.append(Card(suits_value[suit], card, cards_values[card]))
+            deck.append(Card(suits_values[suit], card, cards_values[card]))
 
     blackjack_game(deck)
 
-    
+
     
     
